@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 
-const alunosRouter = require('./routes/alunos'); 
-const professorRouter = require('./routes/professor');
+const alunosRouter = require('./routes/alunos'); //esse
+const professorRouter = require('./routes/professores');
 
 var app = express();
 
@@ -20,9 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/',alunosRouter);
+app.use('/',alunosRouter); //esse
 app.use('/',professorRouter);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
@@ -42,5 +41,4 @@ app.use((err, req, res, next) => {
     error: err
   });
 });
-
 module.exports = app;

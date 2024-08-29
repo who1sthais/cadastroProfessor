@@ -1,0 +1,17 @@
+<%- include('layout') -%>
+<table>
+  <tr>
+    <th>SIAPE</th>
+    <th>Nome</th>
+    <th>Idade</th>
+    <th>Matéria</th>
+  </tr>
+  <% professores.forEach(professor => { %>
+  <tr>
+    <td><%= professor.siape %></td>
+    <td><%= professor.nome %></td>
+    <td><%= professor.idade %></td>
+    <td><%= professor.materia %></td>
+  </tr>
+  <% }); %>
+</table>
